@@ -63,6 +63,7 @@ As the HKUST Class Schedule & Quota website does not provide which school does a
     "CENG": "SENG",
     "CIVL": "SENG",
     "COMP": "SENG",
+    "CORE": "ALL",
     "ELEC": "SENG",
     "ENGG": "SENG",
     "IEDA": "SENG",
