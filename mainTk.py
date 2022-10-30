@@ -82,11 +82,20 @@ class MainWindow(Frame):
             1. CC list for students admitted from 2022
             """
 
+            """course_code = c.findAll('h2')[-1]
+
+            Here we create a set that contains all course code.
+            """
+            course_book = set(
+                [c.findAll('h2')[-1] for c in courses]
+            )
+
             cc22page = getHtml(self._get_2022_cc_url())
             for c in cc22page.findAll("div", {"course"}):
                 title = c.findAll('h2')[-1]
-                if "140" in title.text:
+                if title not in course_book: # if any course exits in CC22 not in YR4 list, add the coruse 
                     courses.append(c)
+                    course_book.add(title)
 
             # fixing the course order
             courses.sort(key=lambda c: c.findAll('h2')[-1].text)

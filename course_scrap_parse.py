@@ -223,13 +223,23 @@ def formatCourse(course):
         # Sort the common core order for cross-list cc subject
         if len(cc) > 1: cc.sort(key=lambda cc: common_core_order[cc])
         # create the string from the given cc area
+
+        """31/10/2022 Update:
+
+        After the above processing, it is possible the same course common area appears for twice.
+
+        For example: E-Comm + E-Comm
+
+        To solve this problem, I convert it to set from list (again).
+        """
+        cc = set(cc)
         course["Common Core Area"] = " + ".join(cc)
 
         # get the section prefix, e.g. "L" in "L1", "T" in "T1"
         # section_prefix = [getPrefix.findall(sec["Section"])[0] for sec in course["Section"]]
         section_prefix = []
-        print(course)
-        print(f"Course: {course['Subject Area']}{course['Course Number']}, area: {course['Common Core Area']}")
+        # print(course)
+        # print(f"Course: {course['Subject Area']}{course['Course Number']}, area: {course['Common Core Area']}")
         # if len(course['Section']) < 10:
         #     print(course['Section'])
         # else:
