@@ -29,6 +29,7 @@ except:
         "CENG": "SENG",
         "CIVL": "SENG",
         "COMP": "SENG",
+        "CORE": "ALL",
         "ELEC": "SENG",
         "ENGG": "SENG",
         "IEDA": "SENG",
